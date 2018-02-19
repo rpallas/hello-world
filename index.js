@@ -1,6 +1,7 @@
 'use strict';
 
 const Hapi = require('hapi');
+const pkg = require('./package.json');
 
 const server = new Hapi.Server();
 server.connection({ port: 3000, host: 'localhost' });
@@ -9,7 +10,7 @@ server.route({
     method: 'GET',
     path: '/',
     handler: function (request, reply) {
-        reply('Hello, world!');
+        reply(`v${pkg.version} says: Hello, world!`);
     }
 });
 
@@ -17,7 +18,7 @@ server.route({
     method: 'GET',
     path: '/{name}',
     handler: function (request, reply) {
-        reply('Hello, ' + encodeURIComponent(request.params.name) + '!');
+        reply(`v${pkg.version} says: Hello,  ${encodeURIComponent(request.params.name)}!`);
     }
 });
 
