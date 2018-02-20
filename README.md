@@ -1,1 +1,1 @@
-A simlple hello world app
+A simple hello world app
