@@ -4,7 +4,7 @@ const Hapi = require('hapi');
 const pkg = require('./package.json');
 
 const server = new Hapi.Server();
-server.connection({ port: 80, host: 'localhost' });
+server.connection({ port: 3000, host: 'localhost' });
 
 server.route({
     method: 'GET',
