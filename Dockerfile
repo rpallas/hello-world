@@ -1,4 +1,4 @@
-FROM node:carbon
+FROM node:jod
 WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm install --only=production
